@@ -83,7 +83,7 @@ void setup()
 
 void loop()
 {
-    int16_t x, y, z;
+    //int16_t x, y, z;
 
     // accelerometer.getXYZ(&x, &y, &z);
     // Serial.println("value of X/Y/Z: ");
