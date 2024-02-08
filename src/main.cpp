@@ -16,7 +16,7 @@ Note : Since NodeMCU has only one Analog Pin, you can connect either of X, Y, or
 
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
-//#include "ADXL335.h" // Include the ADXL335 library
+// #include "ADXL335.h" // Include the ADXL335 library
 
 // Replace these with your WiFi credentials
 const char *ssid = "YOUR_WIFI_SSID";
@@ -36,7 +36,7 @@ const float thresholdAngle = 45.0; // Threshold angle in degrees
 bool smsSent = false;
 
 // Create an instance of the ADXL335 class
-//ADXL335 accelerometer;
+// ADXL335 accelerometer;
 void sendIFTTTMessage()
 {
     // Create HTTPClient object
@@ -78,7 +78,7 @@ void setup()
         Serial.println("Connecting to WiFi...");
     }
     Serial.println("WiFi connected");
-    //accelerometer.begin();
+    // accelerometer.begin();
 }
 
 void loop()
@@ -86,25 +86,24 @@ void loop()
     int16_t x, y, z;
 
     // accelerometer.getXYZ(&x, &y, &z);
-    Serial.println("value of X/Y/Z: ");
-    Serial.println(x);
-    //Serial.println(y);
-    //Serial.println(z);
+    // Serial.println("value of X/Y/Z: ");
+    // Serial.println(x);
+    // Serial.println(y);
+    // Serial.println(z);
     // Read acceleration values from ADXL335
     int16_t xAccel = analogRead(A0);
     float xAngle = xAccel;
-    //int16_t yAccel = y;
-    //int16_t zAccel = z;
+    // int16_t yAccel = y;
+    // int16_t zAccel = z;
 
     // Convert acceleration values to angles (example: using atan2 function)
-   // float xAngle = atan2(yAccel, zAccel) * 180.0 / PI;
-   // float yAngle = atan2(-xAccel, sqrt(yAccel * yAccel + zAccel * zAccel)) * 180.0 / PI;
-   // float zAngle = atan2(sqrt(xAccel * xAccel + yAccel * yAccel), zAccel) * 180.0 / PI;
+    // float xAngle = atan2(yAccel, zAccel) * 180.0 / PI;
+    // float yAngle = atan2(-xAccel, sqrt(yAccel * yAccel + zAccel * zAccel)) * 180.0 / PI;
+    // float zAngle = atan2(sqrt(xAccel * xAccel + yAccel * yAccel), zAccel) * 180.0 / PI;
 
     // Print angles
     Serial.print("X Angle: ");
-    Serial.print(xAccel);
-   
+    Serial.println(xAccel);
 
     // Check if any angle exceeds threshold
     if (abs(xAngle) > thresholdAngle)
