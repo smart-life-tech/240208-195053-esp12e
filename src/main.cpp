@@ -23,7 +23,7 @@ const char *ssid = "YOUR_WIFI_SSID";
 const char *password = "YOUR_WIFI_PASSWORD";
 
 // IFTTT webhook key
-const char *iftttWebhookKey = "bfOh-57I2CvFbJitZqX1gH";
+const char *iftttWebhookKey = "bfOh-57I2CvFbJitZqX1g";
 
 // Define pins for ADXL335
 const int xPin = D0; // Analog pin for X-axis
